@@ -24,7 +24,7 @@ function CountryInfo() {
         onChange={e => setSearch(e.target.value)}
       />
       <div className="grid">
-        {filteredCountries.map((country, index) => (
+        {filteredCountries.sort((a, b) => a.name.common.localeCompare(b.name.common)).map((country, index) => (
           <div key={index} className="card">
             <img src={country.flags.png} alt={country.name.common} />
             <h2>{country.name.common}</h2>
